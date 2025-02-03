@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 2: Tags e Atributos HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 2: Tags e Atributos HTML</h1>
+            <p>Vamos aprender sobre as principais tags e atributos do HTML!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que são Tags HTML?</h2>
+            <p>As **tags HTML** são os elementos usados para definir a estrutura de uma página web. Elas são usadas para criar e organizar o conteúdo da página, como textos, imagens, links, listas, entre outros. Cada tag tem um propósito específico e pode conter atributos que controlam seu comportamento ou aparência.</p>
+
+            <h3>1. Tags de Estruturação de Página</h3>
+            <p>A estrutura básica de um documento HTML começa com a tag <code>&lt;html&gt;</code>, que define o início de um documento HTML. Dentro da tag <code>&lt;html&gt;</code>, temos as tags <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p>
+
+            <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="pt-br"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title&gt;Exemplo de Página&lt;&sol;title&gt;
+                &lt;&sol;head&gt;
+                &lt;body&gt;
+                    &lt;h1>Bem-vindo ao HTML&lt;&sol;h1&gt;
+                        &lt;p>Este é um exemplo simples de uma página HTML.&lt;&sol;p&gt;
+                &lt;&sol;body&gt;
+                &lt;&sol;html&gt;
+            </code></pre>
+
+            <h3>2. Tags de Texto e Formatação</h3>
+            <p>O HTML oferece várias tags para estruturar o conteúdo de texto e aplicá-lo a diferentes tipos de formatação.</p>
+            <ul>
+                <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: Define os títulos de diferentes níveis, sendo <code>&lt;h1&gt;</code> o mais importante e <code>&lt;h6&gt;</code> o menos importante.</li>
+                <li><code>&lt;p&gt;</code>: Define um parágrafo de texto.</li>
+                <li><code>&lt;strong&gt;</code>: Define texto em negrito.</li>
+                <li><code>&lt;em&gt;</code>: Define texto em itálico.</li>
+            </ul>
+
+            <pre><code>
+                &lt;h1&gt;Título Principal&lt;&sol;h1&gt;
+                &lt;p&gt;Este é um parágrafo com &lt;strong&gt;negrito&lt;&sol;strong&gt; e &lt;em&gt;itálico&lt;&sol;em&gt;.&lt;&sol;p&gt;
+            </code></pre>
+
+            <h3>3. Tags de Listas</h3>
+            <p>O HTML possui duas principais tags de listas:</p>
+            <ul>
+                <li><code>&lt;ul&gt;</code>: Cria uma lista não ordenada (com marcadores).</li>
+                <li><code>&lt;ol&gt;</code>: Cria uma lista ordenada (numerada).</li>
+            </ul>
+
+            <pre><code>
+                &lt;ul&gt;
+                    &lt;li&gt;Primeiro item&lt;&sol;li&gt;
+                    &lt;li&gt;Segundo item&lt;&sol;li&gt;
+                &lt;&sol;ul&gt;
+
+                &lt;ol&gt;
+                    &lt;li&gt;Primeiro item numerado&lt;&sol;li&gt;
+                    &lt;li&gt;Segundo item numerado&lt;&sol;li&gt;
+                &lt;&sol;ol&gt;
+            </code></pre>
+
+            <h3>4. Tags de Links</h3>
+            <p>A tag <code>&lt;a&gt;</code> é usada para criar links em uma página HTML. O atributo <code>href</code> especifica o destino do link.</p>
+
+            <pre><code>
+                <a href="https://pt.khanacademy.org/computing/computer-programming/html-css">Clique aqui para visitar nosso site</a>
+            </code></pre>
+
+            <h3>5. Tags de Imagens</h3>
+            <p>A tag <code>&lt;img&gt;</code> é usada para exibir imagens na página. O atributo <code>src</code> especifica o caminho da imagem, e o atributo <code>alt</code> fornece uma descrição alternativa da imagem.</p>
+
+            <pre><code>
+                <img src="imagem/HTMLCSS.jpg" alt="Descrição da imagem">
+            </code></pre>
+
+            <h3>6. Tags de Tabelas</h3>
+            <p>O HTML também permite criar tabelas com a tag <code>&lt;table&gt;</code>, junto com as tags <code>&lt;tr&gt;</code> (para linhas), <code>&lt;td&gt;</code> (para células de dados) e <code>&lt;th&gt;</code> (para células de cabeçalho).</p>
+
+            <pre><code>
+                &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Nome&lt;&sol;th&gt;
+                        &lt;th&gt;Idade&lt;&sol;th&gt;
+                    &lt;&sol;tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;João&lt;&sol;td&gt;
+                        &lt;td&gt;25&lt;&sol;td&gt;
+                    &lt;&sol;tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Ana&lt;&sol;td&gt;
+                        &lt;td&gt;30&lt;&sol;td&gt;
+                    &lt;&sol;tr&gt;
+                &lt;&sol;table&gt;
+            </code></pre>
+
+            <h3>7. Tags de Formulários</h3>
+            <p>Os formulários são essenciais para capturar informações do usuário. As tags mais comuns incluem <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> e <code>&lt;button&gt;</code>.</p>
+
+            <pre><code>
+                &lt;form action="/enviar" method="POST"&gt;
+                    &lt;label for="nome">Nome:&lt;&sol;label&gt;
+                    &lt;input type="text" id="nome" name="nome"&gt;
+                    &lt;button type="submit"&gt;Enviar&lt;&sol;button&gt;
+                &lt;&sol;form&gt;
+            </code></pre>
+
+            <h3>8. Atributos HTML</h3>
+            <p>Os atributos em HTML são usados para fornecer informações adicionais sobre um elemento. Alguns atributos comuns incluem:</p>
+            <ul>
+                <li><code>id</code>: Identificador único para um elemento.</li>
+                <li><code>class</code>: Define uma classe para aplicar estilos CSS.</li>
+                <li><code>style</code>: Aplica estilos diretamente ao elemento.</li>
+                <li><code>href</code>: Define o destino de um link.</li>
+            </ul>
+
+            <pre><code>
+                &lt;a href="https://pt.khanacademy.org/computing/computer-programming/html-css" id="linkExemplo" class="botao"&gt;Clique aqui&lt;&sol;a&gt;
+            </code></pre>
+
+            <h3>Conclusão</h3>
+            <p>Agora que você conhece as tags mais importantes do HTML e seus atributos, é hora de testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 2</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual tag é usada para criar um link?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">&lt;a&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">&lt;link&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">&lt;url&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">&lt;href&gt;</button>
+
+                <p>2. Qual tag é usada para inserir uma imagem?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">&lt;image&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">&lt;img&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">&lt;photo&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">&lt;src&gt;</button>
+
+                <p>3. O que a tag &lt;p&gt; representa?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">Parágrafo de texto</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">Título de página</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">Imagem</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">Tabela</button>
+
+                <p>4. Como é definida uma lista ordenada?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">&lt;ol&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">&lt;ul&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">&lt;list&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">&lt;oltype&gt;</button>
+
+                <p>5. Qual atributo define o destino de um link?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">href</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">src</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">alt</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">id</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo2.js"></script>
+</body>
+</html>

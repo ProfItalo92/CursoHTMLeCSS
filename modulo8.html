@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 8: Estilos de Texto em CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 8: Estilos de Texto em CSS</h1>
+            <p>Vamos aprender como estilizar textos usando CSS!</p>
+        </div>
+        <div id="module-content">
+            <h2>Introdução aos Estilos de Texto</h2>
+            <p>O **CSS** oferece várias propriedades para controlar a aparência dos textos em uma página web. Estilizar o texto é uma das partes fundamentais do design de qualquer site, pois influencia na legibilidade e estética da página.</p>
+            <p>Neste módulo, vamos aprender como controlar a tipografia, o alinhamento, o espaçamento, as transformações e os efeitos de texto.</p>
+
+            <h3>1. Propriedades de Tipografia</h3>
+            <p>A tipografia é um dos aspectos mais importantes ao estilizar o texto. O **CSS** oferece várias propriedades que permitem configurar a fonte, o tamanho e o peso do texto.</p>
+
+            <h4>1.1. Fontes e Tipos de Fontes</h4>
+            <p>Uma das primeiras coisas a se considerar ao estilizar o texto é a escolha da **fonte**. O CSS oferece a possibilidade de escolher entre fontes padrão do sistema ou importar fontes externas, como as fontes do **Google Fonts**.</p>
+            <pre><code>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+            </code></pre>
+            <p>No código acima, usamos a fonte Arial como a principal para o texto, e caso não esteja disponível, o sistema usará uma fonte sans-serif padrão.</p>
+
+            <h4>1.2. Tamanho da Fonte</h4>
+            <p>O tamanho da fonte pode ser ajustado usando a propriedade <code>font-size</code>. O tamanho pode ser especificado em várias unidades, como pixels (<code>px</code>), em (<code>em</code>), rem (<code>rem</code>) ou porcentagem (<code>%</code>).</p>
+            <pre><code>
+                p {
+                    font-size: 18px;
+                }
+            </code></pre>
+            <p>O exemplo acima define o tamanho da fonte dos parágrafos para 18px.</p>
+
+            <h4>1.3. Peso da Fonte</h4>
+            <p>O peso da fonte pode ser ajustado usando a propriedade <code>font-weight</code>. Os valores podem ser números (100 a 900) ou palavras-chave como <code>normal</code>, <code>bold</code>, entre outras.</p>
+            <pre><code>
+                h1 {
+                    font-weight: bold;
+                }
+            </code></pre>
+            <p>Este exemplo torna o texto dos títulos <code>&lt;h1&gt;</code> em negrito.</p>
+
+            <h3>2. Alinhamento e Direção do Texto</h3>
+            <p>Você pode controlar o alinhamento do texto usando a propriedade <code>text-align</code>. Também é possível mudar a direção do texto com a propriedade <code>direction</code>, útil para idiomas como árabe e hebraico.</p>
+
+            <h4>2.1. Alinhamento de Texto</h4>
+            <p>O alinhamento do texto pode ser feito para a esquerda, direita, ou centralizado. O valor padrão é o alinhamento à esquerda.</p>
+            <pre><code>
+                p {
+                    text-align: center;
+                }
+            </code></pre>
+            <p>O exemplo acima alinha o texto dos parágrafos ao centro.</p>
+
+            <h4>2.2. Justificação do Texto</h4>
+            <p>O texto pode ser justificado para ocupar todo o espaço disponível em uma linha, tornando o alinhamento do texto nas margens esquerdo e direito igual.</p>
+            <pre><code>
+                p {
+                    text-align: justify;
+                }
+            </code></pre>
+            <p>Este exemplo justifica o texto do parágrafo.</p>
+
+            <h4>2.3. Direção do Texto</h4>
+            <p>A propriedade <code>direction</code> pode ser usada para alterar a direção do fluxo do texto, de esquerda para direita (<code>ltr</code>) ou de direita para esquerda (<code>rtl</code>).</p>
+            <pre><code>
+                p {
+                    direction: rtl;
+                }
+            </code></pre>
+            <p>Este exemplo altera a direção do texto para da direita para a esquerda.</p>
+
+            <h3>3. Espaçamento do Texto</h3>
+            <p>É possível controlar o **espaçamento do texto** usando várias propriedades de CSS, como <code>letter-spacing</code> (espaçamento entre as letras), <code>word-spacing</code> (espaçamento entre palavras), e <code>line-height</code> (espaçamento entre linhas).</p>
+
+            <h4>3.1. Espaçamento entre Letras</h4>
+            <p>Com a propriedade <code>letter-spacing</code>, você pode aumentar ou diminuir o espaço entre as letras de um texto.</p>
+            <pre><code>
+                h2 {
+                    letter-spacing: 2px;
+                }
+            </code></pre>
+            <p>Este exemplo aumenta o espaço entre as letras do título <code>&lt;h2&gt;</code> para 2 pixels.</p>
+
+            <h4>3.2. Espaçamento entre Palavras</h4>
+            <p>Você pode ajustar o espaço entre as palavras usando a propriedade <code>word-spacing</code>.</p>
+            <pre><code>
+                p {
+                    word-spacing: 5px;
+                }
+            </code></pre>
+            <p>Este exemplo aumenta o espaço entre as palavras nos parágrafos em 5 pixels.</p>
+
+            <h4>3.3. Espaçamento entre Linhas</h4>
+            <p>O espaçamento entre as linhas de texto pode ser ajustado usando a propriedade <code>line-height</code>.</p>
+            <pre><code>
+                p {
+                    line-height: 1.5;
+                }
+            </code></pre>
+            <p>Este exemplo aumenta o espaçamento entre as linhas de texto para 1.5 vezes o tamanho da fonte.</p>
+
+            <h3>4. Transformações de Texto</h3>
+            <p>O **CSS** oferece algumas transformações úteis para alterar a caixa do texto (maiúsculas, minúsculas, capitalização), além de permitir aplicar estilos como itálico, negrito e sublinhado.</p>
+
+            <h4>4.1. Transformações de Caixa</h4>
+            <p>Com a propriedade <code>text-transform</code>, você pode transformar o texto em maiúsculas, minúsculas ou capitalizar a primeira letra de cada palavra.</p>
+            <pre><code>
+                h1 {
+                    text-transform: uppercase;
+                }
+            </code></pre>
+            <p>Este exemplo transforma todas as letras do título <code>&lt;h1&gt;</code> em maiúsculas.</p>
+
+            <h4>4.2. Estilos de Texto</h4>
+            <p>As propriedades <code>font-style</code>, <code>font-weight</code>, e <code>text-decoration</code> são usadas para estilizar o texto de diferentes formas, como itálico, negrito e sublinhado.</p>
+            <pre><code>
+                p {
+                    font-style: italic;
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            </code></pre>
+            <p>Este exemplo aplica **itálico**, **negrito** e **sublinhado** ao texto do parágrafo.</p>
+
+            <h3>5. Efeitos de Texto</h3>
+            <p>Você pode aplicar efeitos de texto, como sombras e gradientes, usando propriedades CSS.</p>
+
+            <h4>5.1. Sombras no Texto</h4>
+            <p>A propriedade <code>text-shadow</code> permite adicionar sombras ao texto.</p>
+            <pre><code>
+                h1 {
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                }
+            </code></pre>
+            <p>Este exemplo aplica uma sombra suave ao título <code>&lt;h1&gt;</code>.</p>
+
+            <h4>5.2. Gradientes no Texto</h4>
+            <p>Você pode aplicar gradientes ao texto usando a propriedade <code>background-clip</code> junto com um gradiente linear ou radial.</p>
+            <pre><code>
+                h2 {
+                    background: linear-gradient(to right, red, yellow);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+            </code></pre>
+            <p>Este exemplo aplica um gradiente no texto do título <code>&lt;h2&gt;</code>, criando um efeito de transição de cores.</p>
+
+            <h3>6. Animações e Transições no Texto</h3>
+            <p>O CSS também permite adicionar animações e transições no texto para tornar o site mais dinâmico.</p>
+
+            <h4>6.1. Transições no Texto</h4>
+            <p>Você pode criar transições suaves no texto usando a propriedade <code>transition</code>.</p>
+            <pre><code>
+                p {
+                    transition: color 0.3s ease;
+                }
+
+                p:hover {
+                    color: red;
+                }
+            </code></pre>
+            <p>Este exemplo faz com que o texto do parágrafo mude de cor para vermelho suavemente quando o mouse passa sobre ele.</p>
+
+            <h4>6.2. Animações no Texto</h4>
+            <p>As animações em CSS permitem criar efeitos de movimento e mudanças no texto.</p>
+            <pre><code>
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                p {
+                    animation: fadeIn 2s ease-in-out;
+                }
+            </code></pre>
+            <p>Este exemplo cria uma animação que faz o texto aparecer lentamente.</p>
+
+            <h2>Conclusão</h2>
+            <p>Agora que você aprendeu como estilizar o texto de várias formas com **CSS**, pode começar a aplicar essas técnicas em seus projetos. O texto bem estilizado é crucial para melhorar a legibilidade e a estética de suas páginas web.</p>
+            <p>Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 8</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual propriedade CSS é usada para mudar o tamanho da fonte?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">font-size</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">text-align</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">letter-spacing</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">text-transform</button>
+
+                <p>2. Como você altera o espaçamento entre palavras?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">word-spacing</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">letter-spacing</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">line-height</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">text-align</button>
+
+                <p>3. Qual propriedade é usada para adicionar uma sombra ao texto?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">text-shadow</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">box-shadow</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">background-color</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">border</button>
+
+                <p>4. Como você aplica um gradiente no texto?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">background-clip: text</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">color: gradient</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">font-weight: bold</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">background: linear-gradient</button>
+
+                <p>5. O que faz a propriedade <code>text-transform</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">Altera a caixa do texto (maiúsculas, minúsculas)</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">Alinha o texto ao centro</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Aplica uma sombra no texto</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">Ajusta o espaçamento entre as palavras</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo8.js"></script>
+</body>
+</html>

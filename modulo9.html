@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 9: Estilos de Caixa (Box Model) em CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 9: Estilos de Caixa (Box Model) em CSS</h1>
+            <p>Vamos aprender como os elementos HTML são estruturados no layout com o Box Model!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que é o Box Model?</h2>
+            <p>O Box Model é um conceito fundamental no CSS que descreve a estrutura de um elemento HTML. Todo elemento na página é considerado uma "caixa", e o Box Model define como os diferentes elementos de uma caixa interagem entre si.</p>
+            <p>Entender o Box Model é crucial para criar layouts precisos e eficientes.</p>
+
+            <h3>1. A Estrutura do Box Model</h3>
+            <p>O Box Model é composto por quatro áreas principais:</p>
+            <ul>
+                <li><b>Conteúdo (Content):</b> O conteúdo real do elemento (texto, imagem, etc.)</li>
+                <li><b>Preenchimento (Padding):</b> O espaço entre o conteúdo e a borda</li>
+                <li><b>Borda (Border):</b> A borda que envolve o conteúdo e o preenchimento</li>
+                <li><b>Margem (Margin):</b> O espaço entre a borda de um elemento e outros elementos ao redor</li>
+            </ul>
+
+            <h4>1.1. Conteúdo (Content)</h4>
+            <p>O conteúdo é a parte central de um elemento, onde o texto, imagens ou outros dados são exibidos. A propriedade <code>width</code> e <code>height</code> definem o tamanho do conteúdo.</p>
+            <pre><code>
+                div {
+                    width: 300px;
+                    height: 150px;
+                }
+            </code></pre>
+            <p>Este código define a largura e a altura do conteúdo de um elemento <code>&lt;div&gt;</code>.</p>
+
+            <h4>1.2. Preenchimento (Padding)</h4>
+            <p>O preenchimento é o espaço entre o conteúdo e a borda do elemento. O preenchimento aumenta o tamanho interno da caixa sem afetar a posição ou o layout de outros elementos.</p>
+            <pre><code>
+                div {
+                    padding: 20px;
+                }
+            </code></pre>
+            <p>Este código adiciona um preenchimento de 20px ao redor do conteúdo do <code>&lt;div&gt;</code>, criando espaço entre o conteúdo e a borda.</p>
+
+            <h4>1.3. Borda (Border)</h4>
+            <p>Borda é uma linha que envolve o conteúdo e o preenchimento. Você pode definir a cor, o estilo e a largura da borda.</p>
+            <pre><code>
+                div {
+                    border: 5px solid black;
+                }
+            </code></pre>
+            <p>O código acima adiciona uma borda de 5px de espessura, sólida e preta ao redor do conteúdo e do preenchimento do <code>&lt;div&gt;</code>.</p>
+
+            <h4>1.4. Margem (Margin)</h4>
+            <p>A margem é o espaço entre a borda de um elemento e outros elementos ao seu redor. As margens podem ser usadas para separar elementos e garantir que eles não fiquem grudados.</p>
+            <pre><code>
+                div {
+                    margin: 20px;
+                }
+            </code></pre>
+            <p>O código acima adiciona uma margem de 20px ao redor da borda do elemento <code>&lt;div&gt;</code>, criando espaço entre este elemento e os outros elementos ao seu redor.</p>
+
+            <h3>2. Propriedades do Box Model</h3>
+            <p>Agora que sabemos como o Box Model é composto, vamos explorar algumas propriedades importantes:</p>
+
+            <h4>2.1. Propriedades de Padding</h4>
+            <p>Você pode definir o preenchimento de forma individual para cada lado (superior, direito, inferior, esquerdo) ou uniformemente para todos os lados.</p>
+            <pre><code>
+                div {
+                    padding-top: 10px;
+                    padding-right: 15px;
+                    padding-bottom: 20px;
+                    padding-left: 25px;
+                }
+            </code></pre>
+            <p>O código acima define o preenchimento de forma específica para cada lado.</p>
+
+            <h4>2.2. Propriedades de Border</h4>
+            <p>As bordas podem ser personalizadas com a propriedade <code>border</code> ou usando as propriedades <code>border-width</code>, <code>border-style</code> e <code>border-color</code>.</p>
+            <pre><code>
+                div {
+                    border-width: 2px;
+                    border-style: dashed;
+                    border-color: red;
+                }
+            </code></pre>
+            <p>Este código define uma borda vermelha, com estilo tracejado e largura de 2px ao redor do conteúdo e do preenchimento do elemento <code>&lt;div&gt;</code>.</p>
+
+            <h4>2.3. Propriedades de Margin</h4>
+            <p>As margens podem ser definidas de forma similar ao preenchimento, e você pode controlar o espaçamento entre os elementos com a propriedade <code>margin</code>.</p>
+            <pre><code>
+                div {
+                    margin: 20px;
+                }
+            </code></pre>
+            <p>Este código aplica uma margem de 20px ao redor do elemento <code>&lt;div&gt;</code>.</p>
+
+            <h3>3. Atenção ao Tamanho do Box</h3>
+            <p>Quando você define as propriedades do Box Model, é importante entender como essas propriedades afetam o **tamanho total** do elemento. Por padrão, o tamanho de um elemento é calculado apenas com base no conteúdo (largura e altura). No entanto, o preenchimento, a borda e a margem afetam o tamanho total do elemento.</p>
+
+            <h4>3.1. Como Calcular o Tamanho Total</h4>
+            <p>O tamanho total de um elemento é a soma de seu conteúdo, mais o preenchimento, a borda e a margem. Se você não quiser que a borda e o preenchimento aumentem o tamanho total, você pode usar a propriedade <code>box-sizing</code>.</p>
+            <pre><code>
+                div {
+                    box-sizing: border-box;
+                    width: 300px;
+                    padding: 20px;
+                    border: 5px solid black;
+                }
+            </code></pre>
+            <p>Com <code>box-sizing: border-box</code>, o preenchimento e a borda são incluídos no cálculo da largura e altura do elemento, o que significa que o tamanho total do elemento será de 300px, incluindo o conteúdo, o preenchimento e a borda.</p>
+
+            <h3>4. Manipulação de Margens e Paddings</h3>
+            <p>Manipular margens e preenchimentos pode ser um pouco complicado às vezes, especialmente quando há margens colidindo ou quando você deseja um espaçamento específico entre os elementos.</p>
+
+            <h4>4.1. Ajustes de Espaço Entre Elementos</h4>
+            <p>Você pode ajustar o espaço entre os elementos de várias formas, seja manipulando as margens externas ou internas.</p>
+
+            <h4>4.2. Problemas Comuns com Margens Colidindo</h4>
+            <p>Quando você tem margens adjacentes, elas podem se "colidir" ou se sobrepor, o que pode afetar o layout. Isso é conhecido como "colapso de margens".</p>
+            <pre><code>
+                div {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                }
+            </code></pre>
+            <p>Se dois elementos consecutivos tiverem margens superiores e inferiores, o navegador irá aplicar o maior valor de margem entre os dois, em vez de somá-los.</p>
+
+            <h3>5. Exemplos Práticos de Uso do Box Model</h3>
+            <p>Agora vamos ver exemplos práticos para entender como o Box Model pode ser usado em layouts reais. Vamos criar um layout simples com três caixas.</p>
+            <pre><code>
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    margin: 10px;
+                    padding: 15px;
+                    border: 2px solid black;
+                }
+            </code></pre>
+
+            <h2>Conclusão</h2>
+            <p>Agora que você compreende como o Box Model funciona e como manipular o conteúdo, o preenchimento, a borda e a margem, você pode criar layouts mais flexíveis e controlados. Com a propriedade <code>box-sizing</code> e o entendimento do comportamento do tamanho total dos elementos, você pode criar páginas com design preciso e consistente.</p>
+            <p>Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 9</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual propriedade define o tamanho do conteúdo de um elemento?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">width</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">padding</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">border</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">margin</button>
+
+                <p>2. Como você define o preenchimento de um elemento em todos os lados?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">padding: 20px;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">padding-top: 20px;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">padding-left: 20px;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">padding-right: 20px;</button>
+
+                <p>3. Qual propriedade é usada para calcular o tamanho total de um elemento, incluindo preenchimento e borda?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">box-sizing</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">content-box</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">width</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">margin-box</button>
+
+                <p>4. Como você pode evitar o problema de colapso de margens?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Usando padding</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Usando display: block</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Usando border</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">Usando box-sizing</button>
+
+                <p>5. O que acontece quando você usa box-sizing: border-box?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">O tamanho total do elemento inclui bordas e preenchimento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">O tamanho total do elemento exclui bordas e preenchimento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">A largura é automaticamente ajustada</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">O tamanho da borda é ignorado</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo9.js"></script>
+</body>
+</html>

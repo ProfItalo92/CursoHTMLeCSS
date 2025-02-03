@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 6: Seletores CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 6: Seletores CSS</h1>
+            <p>Vamos aprender a selecionar e estilizar elementos com CSS de maneira eficiente!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que são Seletores CSS?</h2>
+            <p>Os **seletores CSS** são usados para selecionar e aplicar estilos a elementos HTML específicos em uma página web. Eles são a base da estilização, permitindo que você defina quais elementos devem ser afetados por determinadas regras de estilo.</p>
+            <p>A escolha correta de seletores é fundamental para uma boa organização do código CSS e para garantir que o estilo seja aplicado corretamente.</p>
+
+            <h3>1. Seletores de Tipo</h3>
+            <p>Os **seletores de tipo** selecionam todos os elementos de um determinado tipo ou tag HTML. Por exemplo, para selecionar todos os parágrafos ou títulos, usamos o nome da tag como seletor.</p>
+            <pre><code>
+                p {
+                    color: red;
+                }
+                h1 {
+                    font-size: 36px;
+                }
+            </code></pre>
+            <p>O código acima seleciona todos os elementos <code>&lt;p&gt;</code> e <code>&lt;h1&gt;</code> e aplica os estilos definidos a eles. Todos os parágrafos terão a cor vermelha e os títulos <code>&lt;h1&gt;</code> terão tamanho de fonte 36px.</p>
+
+            <h3>2. Seletores de Classe e ID</h3>
+            <p>Os **seletores de classe** e **ID** permitem selecionar elementos específicos da página, sendo muito úteis para aplicar estilos de maneira mais granular.</p>
+
+            <h4>Seletores de Classe</h4>
+            <p>Os seletores de classe são precedidos por um ponto (<code>.</code>) e selecionam todos os elementos que possuem uma determinada classe.</p>
+            <pre><code>
+                .meu-paragrafo {
+                    font-size: 18px;
+                    color: blue;
+                }
+            </code></pre>
+            <p>Para aplicar o estilo, você adicionaria a classe ao elemento HTML da seguinte forma:</p>
+            <pre><code>
+                &lt;p class="meu-paragrafo"&gt;Este é um parágrafo estilizado.&lt;/p&gt;
+            </code></pre>
+
+            <h4>Seletores de ID</h4>
+            <p>Os seletores de ID são precedidos por um hash (<code>#</code>) e são usados para selecionar um único elemento da página com o ID especificado. O ID deve ser único dentro de uma página.</p>
+            <pre><code>
+                #titulo {
+                    color: green;
+                }
+            </code></pre>
+            <p>Para aplicar o estilo, você usaria o ID no elemento HTML:</p>
+            <pre><code>
+                &lt;h1 id="titulo"&gt;Este é o título estilizado.&lt;/h1&gt;
+            </code></pre>
+
+            <h3>3. Seletores Universais e Combinados</h3>
+            <p>O **seletor universal** (<code>&lt;*&gt;</code>) seleciona todos os elementos da página. Já os **seletores combinados** permitem selecionar elementos que estão em relação uns com os outros.</p>
+
+            <h4>Seletor Universal</h4>
+            <p>O seletor universal seleciona todos os elementos da página e pode ser útil para aplicar um estilo geral a toda a página.</p>
+            <pre><code>
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+            </code></pre>
+            <p>Este código remove todas as margens e preenchimentos de todos os elementos.</p>
+
+            <h4>Seletores Combinados</h4>
+            <p>Você pode combinar seletores para aplicar estilos a elementos com base em sua posição ou relação com outros elementos. Alguns exemplos incluem:</p>
+            <ul>
+                <li><code>elemento1 elemento2</code>: Seleciona <code>elemento2</code> que está dentro de <code>elemento1</code>.</li>
+                <li><code>elemento1 &gt; elemento2</code>: Seleciona <code>elemento2</code> que é filho direto de <code>elemento1</code>.</li>
+                <li><code>elemento1 + elemento2</code>: Seleciona o primeiro <code>elemento2</code> que segue imediatamente <code>elemento1</code>.</li>
+                <li><code>elemento1 ~ elemento2</code>: Seleciona todos os <code>elemento2</code> que são irmãos de <code>elemento1</code>.</li>
+            </ul>
+
+            <h3>4. Seletores de Atributo</h3>
+            <p>Os **seletores de atributo** permitem selecionar elementos com base no valor de um atributo específico. Isso é útil quando você precisa selecionar elementos com atributos específicos, como <code>href</code>, <code>src</code>, etc.</p>
+            <pre><code>
+                a[href^="https"] {
+                    color: green;
+                }
+            </code></pre>
+            <p>Este exemplo seleciona todos os links <code>&lt;a&gt;</code> cujo atributo <code>href</code> começa com <code>https</code> e aplica a cor verde a eles.</p>
+
+            <h3>5. Seletores Pseudo-classes e Pseudo-elementos</h3>
+            <p>As **pseudo-classes** e **pseudo-elementos** permitem selecionar elementos em estados específicos ou partes de um elemento, sem a necessidade de adicionar classes ou IDs no HTML.</p>
+
+            <h4>Pseudo-classes</h4>
+            <p>As pseudo-classes são usadas para selecionar elementos com base em seu estado. Alguns exemplos incluem:</p>
+            <ul>
+                <li><code>:hover</code>: Seleciona um elemento quando o mouse passa sobre ele.</li>
+                <li><code>:focus</code>: Seleciona um elemento que está em foco.</li>
+                <li><code>:active</code>: Seleciona um elemento que está sendo clicado.</li>
+            </ul>
+            <pre><code>
+                a:hover {
+                    color: red;
+                }
+            </code></pre>
+            <p>Este exemplo altera a cor do link para vermelho quando o mouse passa sobre ele.</p>
+
+            <h4>Pseudo-elementos</h4>
+            <p>Os pseudo-elementos são usados para selecionar partes de um elemento, como o início ou o fim de um texto. Alguns exemplos incluem:</p>
+            <ul>
+                <li><code>::before</code>: Insere conteúdo antes de um elemento.</li>
+                <li><code>::after</code>: Insere conteúdo após um elemento.</li>
+            </ul>
+            <pre><code>
+                p::before {
+                    content: "Nota: ";
+                    font-weight: bold;
+                }
+            </code></pre>
+            <p>Este exemplo adiciona o texto "Nota: " antes de todo parágrafo.</p>
+
+            <h3>6. Seletores de Descendentes, Filhos e Irmãos</h3>
+            <p>Os seletores de **descendentes**, **filhos** e **irmãos** são usados para selecionar elementos com base em sua relação hierárquica no DOM.</p>
+
+            <h4>Seletores de Descendentes</h4>
+            <p>Seleciona um elemento que é descendente de outro. Por exemplo:</p>
+            <pre><code>
+                div p {
+                    color: blue;
+                }
+            </code></pre>
+            <p>Isso seleciona todos os <code>&lt;p&gt;</code> dentro de um <code>&lt;div&gt;</code> e aplica a cor azul ao texto.</p>
+
+            <h4>Seletores de Filhos</h4>
+            <p>Seleciona um elemento que é filho direto de outro.</p>
+            <pre><code>
+                div &gt; p {
+                    color: green;
+                }
+            </code></pre>
+
+            <h4>Seletores de Irmãos</h4>
+            <p>Seleciona um elemento que é irmão de outro. Por exemplo, o próximo <code>&lt;p&gt;</code> após um <code>&lt;h1&gt;</code> pode ser selecionado assim:</p>
+            <pre><code>
+                h1 + p {
+                    color: purple;
+                }
+            </code></pre>
+
+            <h2>Conclusão</h2>
+            <p>Os seletores CSS são fundamentais para aplicar estilos de forma eficiente a elementos HTML. Com as ferramentas e exemplos que você aprendeu neste módulo, agora pode estilizar sua página de maneira mais precisa e poderosa. Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 6</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual seletor é usado para selecionar todos os elementos de tipo <code>&lt;p&gt;</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">p</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">.p</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">#p</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">*p</button>
+
+                <p>2. Qual seletor é usado para selecionar um elemento com o ID <code>meuElemento</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">#meuElemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">.meuElemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">meuElemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">*meuElemento</button>
+
+                <p>3. Como você aplica um estilo a todos os elementos com a classe <code>botao</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">.botao</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">#botao</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">botao</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">*botao</button>
+
+                <p>4. O que a pseudo-classe <code>:hover</code> faz?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Altera o estilo ao passar o mouse sobre o elemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Altera o estilo quando o elemento está em foco</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Altera o estilo quando o elemento é clicado</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">Altera o estilo quando o elemento é exibido</button>
+
+                <p>5. Qual seletor de atributo é usado para selecionar links que começam com <code>https</code> no atributo <code>href</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">a[href^="https"]</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">a[href$="https"]</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">a[href="https"]</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">a[href*="https"]</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo6.js"></script>
+</body>
+</html>

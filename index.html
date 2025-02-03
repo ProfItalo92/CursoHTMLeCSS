@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 1: Introdução ao HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 1: Introdução ao HTML</h1>
+            <p>Vamos aprender os conceitos básicos de HTML!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que é HTML?</h2>
+            <p>HTML (HyperText Markup Language) é a linguagem de marcação usada para criar páginas na web. Ele é composto por uma série de elementos chamados "tags", que são usados para estruturar o conteúdo da página.</p>
+
+            <h3>Estrutura Básica de um Documento HTML</h3>
+            <p>Todo documento HTML começa com a declaração do tipo de documento e a tag <code>&lt;html&gt;</code>, seguida pelas tags <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p>
+
+            <pre><code>
+                &lt;DOCTYPE html&gt;
+                &lt;html lang="pt-br"&gt;
+                &lt;head&gt;
+                   &lt;meta charset="UTF-8"&gt;
+                   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                   &lt;title&gt; Minha Primeira Página &lt;&sol;title&gt;
+                &lt;&sol;head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Bem-vindo ao HTML &lt;&sol;h1&gt;
+                    &lt;p&gt; Este é um parágrafo de exemplo. &lt;&sol;p&gt;
+                &lt;&sol;body &gt;
+                &lt;&sol;html&gt;
+            </code></pre>
+
+            <h3>Principais Tags HTML</h3>
+            <ul>
+                <li><code>&lt;html&gt;</code>: Define o documento HTML.</li>
+                <li><code>&lt;head&gt;</code>: Contém metadados sobre o documento (como título e links para CSS).</li>
+                <li><code>&lt;body&gt;</code>: Contém o conteúdo visível da página.</li>
+                <li><code>&lt;h1&gt; a &lt;h6&gt;</code>: Títulos de diferentes níveis.</li>
+                <li><code>&lt;p&gt;</code>: Define um parágrafo.</li>
+            </ul>
+
+            <h3>Exemplo Prático</h3>
+            <pre><code>
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Exemplo de Página&lt;&sol;title&gt;
+                    &lt;&sol;head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Meu Primeiro Título&lt;&sol;h1&gt;
+                        &lt;p&gt;Este é um parágrafo simples.&lt;&sol;p&gt;
+                    &lt;&sol;body&gt;
+                &lt;&sol;html&gt;
+            </code></pre>
+
+            <h3>Conclusão</h3>
+            <p>HTML é a base da criação de páginas web, permitindo estruturar o conteúdo de forma organizada e compreensível para os navegadores.</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 1</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. O que é HTML?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">Uma linguagem de programação</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">Uma linguagem de marcação</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">Um editor de texto</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">Uma plataforma de design</button>
+
+                <p>2. Qual tag define um parágrafo?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">&lt;p&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">&lt;div&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">&lt;span&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">&lt;header&gt;</button>
+
+                <p>3. Como é representado um título no HTML?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">&lt;title&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">&lt;header&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">&lt;h1&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">&lt;paragraph&gt;</button>
+
+                <p>4. Onde o conteúdo visível da página é colocado?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Dentro da tag &lt;body&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Dentro da tag &lt;head&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Dentro da tag &lt;footer&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">Dentro da tag &lt;html&gt;</button>
+
+                <p>5. O que define a estrutura básica de uma página HTML?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">A tag &lt;html&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">A tag &lt;head&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">A tag &lt;body&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">A tag &lt;p&gt;</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

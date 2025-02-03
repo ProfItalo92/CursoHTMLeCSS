@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 3: Listas e Tabelas HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 3: Listas e Tabelas HTML</h1>
+            <p>Vamos aprender sobre as tags de listas e tabelas no HTML!</p>
+        </div>
+        <div id="module-content">
+            <h2>Listas HTML</h2>
+            <p>As **listas** em HTML são utilizadas para organizar dados em grupos. Existem três tipos principais de listas:</p>
+            <ul>
+                <li><b>Listas não ordenadas:</b> Usadas para itens que não precisam estar em uma ordem específica.</li>
+                <li><b>Listas ordenadas:</b> Usadas quando a ordem dos itens é importante, geralmente numerada.</li>
+                <li><b>Listas de definição:</b> Usadas para exibir pares de termos e descrições.</li>
+            </ul>
+
+            <h3>1. Listas Não Ordenadas</h3>
+            <p>A tag <code>&lt;ul&gt;</code> é usada para criar uma lista não ordenada, e dentro dela são adicionados os itens com a tag <code>&lt;li&gt;</code>.</p>
+            <pre><code>
+                &lt;ul&gt;
+                    &lt;li&gt;Item 1&lt;/li&gt;
+                    &lt;li&gt;Item 2&lt;/li&gt;
+                    &lt;li&gt;Item 3&lt;/li&gt;
+                &lt;/ul&gt;
+            </code></pre>
+            <p>O exemplo acima cria uma lista com três itens, onde cada item é representado pela tag <code>&lt;li&gt;</code>.</p>
+
+            <h3>2. Listas Ordenadas</h3>
+            <p>A tag <code>&lt;ol&gt;</code> é usada para criar uma lista ordenada. Assim como nas listas não ordenadas, a tag <code>&lt;li&gt;</code> é usada para definir cada item da lista.</p>
+            <pre><code>
+                &lt;ol&gt;
+                    &lt;li&gt;Primeiro item&lt;/li&gt;
+                    &lt;li&gt;Segundo item&lt;/li&gt;
+                    &lt;li&gt;Terceiro item&lt;/li&gt;
+                &lt;/ol&gt;
+            </code></pre>
+            <p>O exemplo acima cria uma lista numerada com três itens.</p>
+
+            <h3>3. Listas de Definição</h3>
+            <p>A tag <code>&lt;dl&gt;</code> é usada para criar listas de definição. Dentro dela, usamos as tags <code>&lt;dt&gt;</code> para definir o termo e <code>&lt;dd&gt;</code> para definir a descrição.</p>
+            <pre><code>
+                &lt;dl&gt;
+                    &lt;dt&gt;HTML&lt;/dt&gt;
+                    &lt;dd&gt;Uma linguagem de marcação usada para criar páginas web&lt;/dd&gt;
+                    &lt;dt&gt;CSS&lt;/dt&gt;
+                    &lt;dd&gt;Uma linguagem usada para estilizar páginas web&lt;/dd&gt;
+                &lt;/dl&gt;
+            </code></pre>
+            <p>O exemplo acima cria uma lista de definição com dois termos e suas respectivas descrições.</p>
+
+            <h2>Tabelas HTML</h2>
+            <p>As **tabelas** são usadas para organizar dados em linhas e colunas. O HTML oferece a tag <code>&lt;table&gt;</code> para definir uma tabela, com as tags <code>&lt;tr&gt;</code> para as linhas, <code>&lt;td&gt;</code> para as células de dados e <code>&lt;th&gt;</code> para os cabeçalhos das colunas.</p>
+
+            <h3>1. Criando uma Tabela</h3>
+            <p>Para criar uma tabela básica, usamos a tag <code>&lt;table&gt;</code>, onde as linhas da tabela são definidas pela tag <code>&lt;tr&gt;</code>, e dentro de cada linha, as células são definidas com as tags <code>&lt;td&gt;</code> (dados) ou <code>&lt;th&gt;</code> (cabeçalho).</p>
+            <pre><code>
+                &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Nome&lt;/th&gt;
+                        &lt;th&gt;Idade&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;João&lt;/td&gt;
+                        &lt;td&gt;25&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Maria&lt;/td&gt;
+                        &lt;td&gt;30&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            </code></pre>
+            <p>O exemplo acima cria uma tabela simples com duas colunas (Nome e Idade) e duas linhas de dados.</p>
+
+            <h3>2. Atributos de Tabelas</h3>
+            <p>As tabelas também podem ter atributos, como <code>border</code> para definir uma borda, <code>cellspacing</code> para definir o espaçamento entre as células, e <code>cellpadding</code> para definir o preenchimento dentro das células.</p>
+            <pre><code>
+                &lt;table border="1" cellspacing="2" cellpadding="5"&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Nome&lt;/th&gt;
+                        &lt;th&gt;Idade&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;João&lt;/td&gt;
+                        &lt;td&gt;25&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            </code></pre>
+            <p>Este exemplo cria uma tabela com borda, espaçamento entre as células e preenchimento dentro das células.</p>
+
+            <h2>Conclusão</h2>
+            <p>Listas e tabelas são fundamentais para organizar e estruturar dados em HTML. Agora que você já conhece os conceitos e exemplos de listas e tabelas, vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 3</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual tag é usada para criar uma lista ordenada?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">&lt;ul&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">&lt;ol&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">&lt;li&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">&lt;list&gt;</button>
+
+                <p>2. Qual tag é usada para criar uma célula de dados em uma tabela?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">&lt;td&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">&lt;tr&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">&lt;th&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">&lt;table&gt;</button>
+
+                <p>3. Qual atributo define o espaço entre as células de uma tabela?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">cellspacing</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">border</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">cellpadding</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">width</button>
+
+                <p>4. Como você cria uma lista de definição em HTML?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">&lt;ul&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">&lt;ol&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">&lt;dl&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">&lt;list&gt;</button>
+
+                <p>5. Qual tag é usada para definir o título de uma tabela?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">&lt;th&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">&lt;tr&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">&lt;table&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">&lt;td&gt;</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo3.js"></script>
+</body>
+</html>

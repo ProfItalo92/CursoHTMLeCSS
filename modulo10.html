@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 10: Animações e Transições em CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 10: Animações e Transições em CSS</h1>
+            <p>Vamos aprender como criar animações e transições dinâmicas com CSS!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que são Animações e Transições em CSS?</h2>
+            <p>Animações e transições são recursos poderosos do CSS que permitem adicionar efeitos visuais a elementos de uma página web. Elas são usadas para melhorar a experiência do usuário, criando efeitos de movimento, alteração de cor, opacidade, e muito mais.</p>
+            <p>Com as transições, você pode alterar suavemente a aparência de um elemento quando ocorre uma interação, como o movimento do mouse. Já as animações permitem criar movimentos complexos e efeitos visuais no decorrer do tempo.</p>
+
+            <h3>1. Propriedades de Transição</h3>
+            <p>A transição é uma maneira de criar efeitos de mudança suave entre dois estados de um elemento. Ela é útil para animar propriedades como cor, tamanho, posição, etc.</p>
+
+            <h4>1.1. Criando uma Transição</h4>
+            <p>A propriedade <code>transition</code> define o tempo e o tipo de transição de um elemento. O formato básico é:</p>
+            <pre><code>
+                element {
+                    transition: property duration timing-function delay;
+                }
+            </code></pre>
+            <p>Vamos ver um exemplo de transição que muda a cor de fundo de um botão quando o mouse passa sobre ele:</p>
+            <pre><code>
+                button {
+                    background-color: blue;
+                    color: white;
+                    transition: background-color 0.3s ease;
+                }
+
+                button:hover {
+                    background-color: green;
+                }
+            </code></pre>
+            <p>Quando o usuário passa o mouse sobre o botão, a cor de fundo muda de azul para verde de maneira suave.</p>
+
+            <h4>1.2. Propriedades para Animar</h4>
+            <p>Você pode animar várias propriedades de um elemento, como:</p>
+            <ul>
+                <li><code>color</code></li>
+                <li><code>background-color</code></li>
+                <li><code>width</code></li>
+                <li><code>height</code></li>
+                <li><code>transform</code> (escala, rotação, etc.)</li>
+            </ul>
+            <p>No exemplo anterior, animamos a propriedade <code>background-color</code> durante a transição.</p>
+
+            <h3>2. Propriedades de Animação</h3>
+            <p>As animações permitem criar mudanças de estilo ao longo do tempo e oferecem mais controle do que as transições. A principal função para criar animações em CSS é a regra <code>@keyframes</code>.</p>
+
+            <h4>2.1. A função <code>@keyframes</code></h4>
+            <p>A regra <code>@keyframes</code> define os diferentes "estados" de uma animação, indicando como o elemento vai se comportar em momentos específicos.</p>
+            <pre><code>
+                @keyframes exemplo {
+                    0% {
+                        background-color: blue;
+                    }
+                    100% {
+                        background-color: red;
+                    }
+                }
+
+                .animar {
+                    animation: exemplo 2s infinite;
+                }
+            </code></pre>
+            <p>O código acima cria uma animação que altera a cor de fundo de azul para vermelho em 2 segundos, e essa animação será repetida infinitamente.</p>
+
+            <h4>2.2. Propriedades da Animação</h4>
+            <p>Uma animação pode ser controlada com as seguintes propriedades:</p>
+            <ul>
+                <li><code>animation-name</code>: O nome da animação definida pelo <code>@keyframes</code>.</li>
+                <li><code>animation-duration</code>: A duração da animação.</li>
+                <li><code>animation-timing-function</code>: A função de tempo da animação (ex: <code>ease</code>, <code>linear</code>, etc.).</li>
+                <li><code>animation-delay</code>: O tempo de atraso antes da animação começar.</li>
+                <li><code>animation-iteration-count</code>: O número de vezes que a animação deve ser repetida.</li>
+            </ul>
+            <pre><code>
+                .animar {
+                    animation: exemplo 3s ease-in-out 1;
+                }
+            </code></pre>
+            <p>Este exemplo anima um elemento uma vez, com uma duração de 3 segundos, usando uma função de tempo <code>ease-in-out</code>.</p>
+
+            <h3>3. Animações Complexas</h3>
+            <p>Você pode combinar várias animações em um único elemento, animando várias propriedades simultaneamente. Também é possível usar animações complexas com transformações e opacidade.</p>
+
+            <h4>3.1. Múltiplas Animações</h4>
+            <p>Para animar várias propriedades ao mesmo tempo, você pode usar várias regras de animação separadas por vírgulas.</p>
+            <pre><code>
+                .animar {
+                    animation: exemplo1 2s, exemplo2 3s ease-in;
+                }
+            </code></pre>
+            <p>Este exemplo aplica duas animações simultaneamente.</p>
+
+            <h4>3.2. Usando Transformações</h4>
+            <p>Com a propriedade <code>transform</code>, você pode criar animações de rotação, escalonamento e movimentação.</p>
+            <pre><code>
+                @keyframes exemplo {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .animar {
+                    animation: exemplo 2s infinite;
+                }
+            </code></pre>
+            <p>Este exemplo cria uma animação de rotação de 360 graus que se repete infinitamente.</p>
+
+            <h4>3.3. Mudando a Opacidade</h4>
+            <p>A animação de opacidade é muito útil para criar efeitos de fade-in e fade-out.</p>
+            <pre><code>
+                @keyframes fade {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .animar {
+                    animation: fade 3s ease-out;
+                }
+            </code></pre>
+            <p>Este exemplo cria um efeito de fade-in, onde o elemento se torna visível gradualmente ao longo de 3 segundos.</p>
+
+            <h3>4. Interatividade e Eventos com Animações</h3>
+            <p>As animações podem ser ativadas com interações do usuário, como o movimento do mouse, clique ou foco em um elemento. As transições também podem ser combinadas com eventos para criar efeitos dinâmicos e interativos.</p>
+
+            <h4>4.1. Usando Hover para Animações</h4>
+            <p>Você pode aplicar animações quando o usuário passa o mouse sobre um elemento, criando interatividade.</p>
+            <pre><code>
+                button {
+                    transition: transform 0.3s ease;
+                }
+
+                button:hover {
+                    transform: scale(1.1);
+                }
+            </code></pre>
+            <p>Este exemplo aumenta o tamanho do botão quando o usuário passa o mouse sobre ele.</p>
+
+            <h4>4.2. Usando Click para Iniciar Animações</h4>
+            <p>Você pode usar o evento de clique para disparar animações com o CSS e JavaScript.</p>
+            <pre><code>
+                document.getElementById("animarButton").addEventListener("click", function() {
+                    document.querySelector(".animar").classList.add("animacao-ativa");
+                });
+            </code></pre>
+            <p>Este código usa JavaScript para adicionar uma classe de animação ao clicar em um botão.</p>
+
+            <h2>Conclusão</h2>
+            <p>Agora que você aprendeu como usar transições e animações em CSS, pode adicionar efeitos visuais interativos e dinâmicos em suas páginas. As animações não só tornam o site mais visualmente interessante, mas também podem melhorar a experiência do usuário, destacando interações e elementos importantes.</p>
+            <p>Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 10</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual é a propriedade usada para definir a duração de uma animação?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">animation-duration</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">transition-duration</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">transform-duration</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">animation-timing</button>
+
+                <p>2. Qual propriedade define o nome da animação?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">animation-name</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">animation-type</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">transition-name</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">animation-timing</button>
+
+                <p>3. Qual é o efeito criado quando você usa <code>transform: scale(1.1)</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">Aumenta o tamanho do elemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">Gira o elemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">Muda a cor do elemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">Alinha o elemento</button>
+
+                <p>4. O que significa a função <code>ease-in-out</code> na animação?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">A animação começa lenta, acelera e depois desacelera</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">A animação é linear durante todo o tempo</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">A animação começa rápido e desacelera no final</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">A animação tem um ciclo contínuo</button>
+
+                <p>5. Como você aplica uma animação a um elemento quando ele recebe foco?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">Usando a pseudo-classe :focus</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">Usando a pseudo-classe :hover</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Usando a pseudo-classe :active</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">Usando a pseudo-classe :visited</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para retornar ao Módulo 1 -->
+        <button id="returnToModule1" class="next-button" style="display:none;" onclick="goToModule1()">Voltar para o Módulo 1</button>
+    </div>
+
+    <script src="modulo10.js"></script>
+</body>
+</html>

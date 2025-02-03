@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 5: Introdução ao CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 5: Introdução ao CSS</h1>
+            <p>Vamos aprender como estilizar páginas HTML com CSS!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que é CSS?</h2>
+            <p>CSS (Cascading Style Sheets) é uma linguagem de estilização usada para definir a aparência de uma página web escrita em HTML. Enquanto o HTML é responsável pela estrutura e conteúdo da página, o CSS é responsável pelo estilo, como cores, fontes, espaçamento e layout.</p>
+            <p>O CSS permite separar a estrutura da apresentação, o que torna o código mais organizado, reutilizável e fácil de manter.</p>
+
+            <h3>1. Como Funciona o CSS?</h3>
+            <p>Existem três maneiras principais de aplicar CSS a uma página web:</p>
+            <ul>
+                <li><b>CSS Inline:</b> Aplica o estilo diretamente dentro de uma tag HTML, usando o atributo <code>style</code>.</li>
+                <li><b>CSS Interno:</b> Aplica o estilo dentro de uma tag <code>&lt;style&gt;</code> no cabeçalho do documento HTML.</li>
+                <li><b>CSS Externo:</b> Aplica o estilo em um arquivo separado, linkado à página HTML usando a tag <code>&lt;link&gt;</code>.</li>
+            </ul>
+
+            <h3>1.1. CSS Inline</h3>
+            <p>O CSS inline é aplicado diretamente em um elemento HTML através do atributo <code>style</code>.</p>
+            <pre><code>
+                &lt;p style="color: blue; font-size: 20px;"&gt;Este texto é azul e tem fonte de 20px.&lt;/p&gt;
+            </code></pre>
+            <p>O exemplo acima aplica um estilo diretamente ao parágrafo, tornando o texto azul e com uma fonte de 20px.</p>
+
+            <h3>1.2. CSS Interno</h3>
+            <p>O CSS interno é definido dentro da tag <code>&lt;style&gt;</code> no cabeçalho do documento HTML. Ele afeta todos os elementos que correspondem aos seletores.</p>
+            <pre><code>
+                &lt;head&gt;
+                    &lt;style&gt;
+                        p {
+                            color: red;
+                            font-size: 18px;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;p&gt;Este texto será vermelho e com fonte de 18px.&lt;/p&gt;
+            </code></pre>
+
+            <h3>1.3. CSS Externo</h3>
+            <p>O CSS externo é o mais comum e recomendado. Ele é colocado em um arquivo separado, com a extensão <code>.css</code>, e é linkado à página HTML com a tag <code>&lt;link&gt;</code>.</p>
+            <pre><code>
+                &lt;link rel="stylesheet" href="estilos.css"&gt;
+            </code></pre>
+            <p>O conteúdo do arquivo <code>estilos.css</code> seria:</p>
+            <pre><code>
+                p {
+                    color: green;
+                    font-size: 16px;
+                }
+            </code></pre>
+
+            <h3>2. Seletores CSS</h3>
+            <p>Os seletores são usados para "selecionar" os elementos HTML que serão estilizados. Existem diferentes tipos de seletores:</p>
+            <ul>
+                <li><b>Seletores de tipo:</b> Seleciona todos os elementos de um tipo específico, como <code>p</code>, <code>h1</code>, <code>div</code>.</li>
+                <li><b>Seletores de classe:</b> Seleciona todos os elementos que têm uma classe específica, usando o ponto antes do nome da classe (<code>.classe</code>).</li>
+                <li><b>Seletores de ID:</b> Seleciona um único elemento com um ID específico, usando o caractere de hash (<code>#id</code>).</li>
+                <li><b>Seletores de atributo:</b> Seleciona elementos que possuem um atributo específico.</li>
+            </ul>
+
+            <h3>2.1. Seletores de Tipo</h3>
+            <pre><code>
+                p {
+                    color: orange;
+                }
+            </code></pre>
+            <p>O exemplo acima estiliza todos os parágrafos (<code>p</code>) da página, tornando o texto laranja.</p>
+
+            <h3>2.2. Seletores de Classe</h3>
+            <pre><code>
+                .meuTexto {
+                    color: purple;
+                    font-size: 22px;
+                }
+            </code></pre>
+            <p>Para usar este seletor, você aplicaria a classe <code>meuTexto</code> em um elemento HTML, como mostrado abaixo:</p>
+            <pre><code>
+                &lt;p class="meuTexto"&gt;Este texto será roxo e com fonte de 22px.&lt;/p&gt;
+            </code></pre>
+
+            <h3>2.3. Seletores de ID</h3>
+            <pre><code>
+                #meuParagrafo {
+                    color: red;
+                    font-weight: bold;
+                }
+            </code></pre>
+            <p>Usando o seletor de ID, você pode estilizar um elemento único na página. No exemplo abaixo:</p>
+            <pre><code>
+                &lt;p id="meuParagrafo"&gt;Este parágrafo será vermelho e em negrito.&lt;/p&gt;
+            </code></pre>
+
+            <h3>3. Propriedades de CSS</h3>
+            <p>O CSS oferece várias propriedades que permitem alterar a aparência de elementos HTML. Vamos ver algumas das propriedades mais comuns:</p>
+            <ul>
+                <li><code>color</code>: Define a cor do texto.</li>
+                <li><code>font-size</code>: Define o tamanho da fonte.</li>
+                <li><code>background-color</code>: Define a cor de fundo.</li>
+                <li><code>margin</code>: Define a margem ao redor de um elemento.</li>
+                <li><code>padding</code>: Define o preenchimento dentro de um elemento.</li>
+            </ul>
+
+            <h3>3.1. Cores e Fontes</h3>
+            <pre><code>
+                p {
+                    color: blue;
+                    font-size: 18px;
+                }
+            </code></pre>
+            <p>Este exemplo altera a cor do texto para azul e o tamanho da fonte para 18px.</p>
+
+            <h3>3.2. Margens e Preenchimento</h3>
+            <pre><code>
+                div {
+                    margin: 20px;
+                    padding: 15px;
+                }
+            </code></pre>
+            <p>A propriedade <code>margin</code> define o espaço ao redor de um elemento, enquanto a propriedade <code>padding</code> define o espaço dentro do elemento.</p>
+
+            <h3>4. Layouts com CSS</h3>
+            <p>O CSS oferece várias formas de criar layouts. Vamos explorar o **Flexbox** e o **Grid Layout**, dois dos métodos mais populares para construir layouts responsivos e dinâmicos.</p>
+
+            <h3>4.1. Flexbox</h3>
+            <p>O **Flexbox** é um modelo de layout unidimensional que permite distribuir o espaço entre os elementos de forma eficiente. Ele é usado quando você precisa alinhar itens em uma linha ou coluna.</p>
+            <pre><code>
+                .container {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .item {
+                    width: 30%;
+                }
+            </code></pre>
+
+            <h3>4.2. Grid Layout</h3>
+            <p>O **Grid Layout** permite criar layouts bidimensionais, organizando os elementos em linhas e colunas.</p>
+            <pre><code>
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+                .item {
+                    background-color: lightblue;
+                }
+            </code></pre>
+
+            <h3>5. Responsividade e Media Queries</h3>
+            <p>**Media queries** permitem que o CSS se adapte a diferentes tamanhos de tela, tornando o site responsivo.</p>
+            <pre><code>
+                @media (max-width: 768px) {
+                    body {
+                        font-size: 14px;
+                    }
+                }
+            </code></pre>
+            <p>O exemplo acima diminui o tamanho da fonte para 14px em telas menores que 768px.</p>
+
+            <h3>6. Transições e Animações em CSS</h3>
+            <p>O CSS permite criar **transições** e **animações** para adicionar interatividade à sua página.</p>
+
+            <h3>6.1. Transições</h3>
+            <pre><code>
+                .botao {
+                    transition: background-color 0.3s ease;
+                }
+                .botao:hover {
+                    background-color: #4CAF50;
+                }
+            </code></pre>
+            <p>A propriedade <code>transition</code> permite que a cor de fundo do botão mude suavemente quando o mouse passa sobre ele.</p>
+
+            <h3>6.2. Animações</h3>
+            <pre><code>
+                @keyframes animacao {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                .elemento {
+                    animation: animacao 2s ease-in-out;
+                }
+            </code></pre>
+            <p>A propriedade <code>animation</code> permite criar animações complexas no CSS.</p>
+
+            <h2>Conclusão</h2>
+            <p>Agora você tem uma introdução sólida ao CSS! Com esses conhecimentos, você pode começar a estilizar suas páginas HTML e criar layouts responsivos e dinâmicos. Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 5</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual é a principal função do CSS?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">Estruturar o conteúdo</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">Estilizar a página</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">Armazenar dados</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">Criar animações</button>
+
+                <p>2. Como você define uma cor de fundo em CSS?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">background-color</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">color</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">background</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">fill</button>
+
+                <p>3. Qual é a propriedade usada para alterar o tamanho da fonte em CSS?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">font-size</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">font-family</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">font-style</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">font-weight</button>
+
+                <p>4. O que a propriedade <code>display: flex</code> faz?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Cria um layout flexível</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Alinha os elementos à esquerda</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Alinha os elementos ao centro</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">Cria um grid</button>
+
+                <p>5. Como você aplica um estilo a um elemento com a classe <code>meuElemento</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">.meuElemento { ... }</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">#meuElemento { ... }</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">meuElemento { ... }</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">meuElemento() { ... }</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

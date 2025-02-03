@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 4: Links e Imagens HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 4: Links e Imagens HTML</h1>
+            <p>Vamos aprender como adicionar links e imagens nas páginas HTML!</p>
+        </div>
+        <div id="module-content">
+            <h2>O que são Links e Imagens em HTML?</h2>
+            <p>**Links** e **imagens** são dois dos elementos mais essenciais para criar páginas web interativas e ricas em conteúdo visual. Os links permitem que você navegue entre diferentes páginas ou sites, enquanto as imagens ajudam a ilustrar e a tornar o conteúdo mais visualmente atraente.</p>
+
+            <h3>1. Como Criar Links em HTML</h3>
+            <p>Os **links** em HTML são criados com a tag <code>&lt;a&gt;</code>, que é usada para definir um hyperlink. O principal atributo dessa tag é o <code>href</code>, que especifica o destino do link.</p>
+
+            <pre><code>
+                &lt;a href="https://www.exemplo.com"&gt;Clique aqui para visitar nosso site&lt;/a&gt;
+            </code></pre>
+            <p>O código acima cria um link que, ao ser clicado, levará o usuário para o site <code>https://www.exemplo.com</code>.</p>
+
+            <h3>1.1. Atributo <code>href</code></h3>
+            <p>O atributo <code>href</code> (Hypertext Reference) é utilizado para definir o destino do link. Ele pode apontar para:</p>
+            <ul>
+                <li><strong>Links Externos:</strong> Para acessar outros sites na web, basta passar a URL completa no atributo <code>href</code>.</li>
+                <li><strong>Links Internos:</strong> Links que direcionam para outra parte da mesma página ou para outra página do mesmo site.</li>
+            </ul>
+            <pre><code>
+                &lt;a href="https://www.exemplo.com"&gt;Acesse nosso site&lt;/a&gt;
+                &lt;a href="#secao1"&gt;Ir para a Seção 1&lt;/a&gt;
+            </code></pre>
+            <p>O primeiro link leva para uma página externa, enquanto o segundo link leva para uma seção interna da mesma página (supondo que haja um elemento com o <code>id="secao1"</code>).</p>
+
+            <h3>1.2. Links de Email e Telefones</h3>
+            <p>Você também pode usar a tag <code>&lt;a&gt;</code> para criar links de **email** ou **telefone**:</p>
+            <pre><code>
+                &lt;a href="mailto:exemplo@dominio.com"&gt;Envie um e-mail&lt;/a&gt;
+                &lt;a href="tel:+551199999999"&gt;Ligue para nós&lt;/a&gt;
+            </code></pre>
+            <p>O link de email permite que o usuário abra o cliente de email para enviar uma mensagem, e o link de telefone permite que o usuário ligue para o número especificado diretamente de dispositivos móveis.</p>
+
+            <h3>2. Como Inserir Imagens em HTML</h3>
+            <p>As **imagens** em HTML são inseridas com a tag <code>&lt;img&gt;</code>. Essa tag não possui uma tag de fechamento, pois é uma tag auto-fechante. O atributo mais importante é <code>src</code>, que define o caminho da imagem, e <code>alt</code>, que fornece um texto alternativo caso a imagem não seja carregada.</p>
+
+            <pre><code>
+                &lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
+            </code></pre>
+            <p>O código acima carrega a imagem <code>imagem.jpg</code> e exibe a descrição "Descrição da imagem" caso a imagem não possa ser exibida.</p>
+
+            <h3>2.1. Atributo <code>src</code> e <code>alt</code></h3>
+            <p>O atributo <code>src</code> especifica o caminho do arquivo de imagem. Esse caminho pode ser um arquivo local ou uma URL de uma imagem hospedada na web. O atributo <code>alt</code> é usado para melhorar a acessibilidade da página, proporcionando uma descrição textual da imagem para leitores de tela.</p>
+
+            <pre><code>
+                &lt;img src="logo.png" alt="Logotipo da Empresa"&gt;
+            </code></pre>
+
+            <h3>2.2. Imagens Responsivas</h3>
+            <p>Para tornar as imagens responsivas (adaptáveis ao tamanho da tela), você pode usar o CSS para controlar a largura e a altura das imagens.</p>
+            <pre><code>
+                &lt;img src="imagem.jpg" alt="Imagem Responsiva" style="width: 100%; height: auto;"&gt;
+            </code></pre>
+            <p>Este exemplo faz com que a imagem ocupe 100% da largura do seu elemento pai, mantendo a proporção da imagem.</p>
+
+            <h3>3. Links e Imagens de Forma Avançada</h3>
+            <p>Além de links simples e imagens estáticas, podemos usar imagens como links e até criar links de download para arquivos.</p>
+
+            <h3>3.1. Imagens Como Links</h3>
+            <p>Você pode usar uma imagem como link, clicando na imagem para redirecionar o usuário.</p>
+            <pre><code>
+                &lt;a href="https://www.exemplo.com"&gt;
+                    &lt;img src="imagem.jpg" alt="Imagem como link"&gt;
+                &lt;/a&gt;
+            </code></pre>
+
+            <h3>3.2. Links de Download</h3>
+            <p>Você também pode criar links para permitir que o usuário faça o download de arquivos, como documentos ou imagens.</p>
+            <pre><code>
+                &lt;a href="documento.pdf" download&gt;Clique aqui para baixar o PDF&lt;/a&gt;
+            </code></pre>
+            <p>O atributo <code>download</code> permite que o link seja tratado como um download em vez de um link para visualização.</p>
+
+            <h2>Conclusão</h2>
+            <p>Agora que você aprendeu a trabalhar com links e imagens em HTML, está pronto para usar essas ferramentas essenciais para tornar suas páginas mais dinâmicas e interativas!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 4</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual tag é usada para criar links?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">&lt;a&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">&lt;link&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">&lt;url&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">&lt;href&gt;</button>
+
+                <p>2. Qual atributo é usado para especificar o caminho de uma imagem?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">src</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">href</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">alt</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">path</button>
+
+                <p>3. Qual tag define uma imagem em HTML?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">&lt;img&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">&lt;image&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">&lt;photo&gt;</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">&lt;picture&gt;</button>
+
+                <p>4. Como você torna uma imagem responsiva?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Usando CSS para definir a largura e altura</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Alterando o formato da imagem</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Usando o atributo <code>alt</code></button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">Colocando a imagem em um arquivo ZIP</button>
+
+                <p>5. Qual atributo é usado para fornecer uma descrição alternativa para uma imagem?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">alt</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">src</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">href</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">path</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo4.js"></script>
+</body>
+</html>

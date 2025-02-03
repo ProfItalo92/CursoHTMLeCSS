@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 7: Layouts em CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 7: Layouts em CSS</h1>
+            <p>Vamos aprender como criar layouts incríveis usando CSS!</p>
+        </div>
+        <div id="module-content">
+            <h2>Introdução aos Layouts em CSS</h2>
+            <p>Layouts em CSS são essenciais para organizar o conteúdo de uma página de forma eficiente e estética. Com a evolução do CSS, novas técnicas como Flexbox e Grid Layout tornaram a criação de layouts muito mais fácil e dinâmica.</p>
+
+            <h3>1. Float e Clearfix</h3>
+            <p>Antes de falarmos sobre os métodos modernos de layout, é importante conhecer o método antigo de **float**, que ainda é utilizado em alguns casos.</p>
+
+            <h4>Usando Float para Layouts</h4>
+            <p>A propriedade <code>float</code> foi utilizada para alinhar elementos horizontalmente, como blocos de texto ou imagens. Porém, o float traz alguns desafios em layouts mais complexos, especialmente quando o contêiner dos elementos flutuantes não se ajusta ao tamanho total dos seus filhos.</p>
+            <pre><code>
+                &lt;div class="float-container"&gt;
+                    &lt;div class="box"&gt;Caixa 1&lt;/div&gt;
+                    &lt;div class="box"&gt;Caixa 2&lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+            <p>No código acima, as caixas vão se alinhar horizontalmente usando o float, mas o contêiner <code>.float-container</code> pode não se ajustar automaticamente ao tamanho das caixas flutuantes.</p>
+
+            <h4>Clearfix</h4>
+            <p>Para corrigir o problema do contêiner que não envolve os elementos flutuantes, podemos usar o **clearfix**. O clearfix força o contêiner a se ajustar à altura dos seus filhos flutuantes.</p>
+            <pre><code>
+                .float-container:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            </code></pre>
+
+            <h3>2. Flexbox</h3>
+            <p>O **Flexbox** é uma maneira poderosa de criar layouts dinâmicos e flexíveis, ideal para distribuições unidimensionais (uma linha ou uma coluna). Flexbox permite alinhar e distribuir o espaço de maneira fácil entre os itens dentro de um contêiner flexível.</p>
+
+            <h4>O que é Flexbox?</h4>
+            <p>O **Flexbox** foi introduzido para resolver as limitações do float e do layout baseado em tabelas, proporcionando uma forma mais intuitiva de criar layouts. Um contêiner flexível é criado com a propriedade <code>display: flex</code> e os itens dentro dele podem ser alinhados e distribuídos de maneira simples.</p>
+
+            <pre><code>
+                .container {
+                    display: flex;
+                }
+
+                .item {
+                    flex: 1;
+                }
+            </code></pre>
+            <p>No exemplo acima, o contêiner usa <code>display: flex</code>, e os itens dentro dele são distribuídos igualmente pelo espaço disponível.</p>
+
+            <h4>Alinhamento e Distribuição de Itens com Flexbox</h4>
+            <p>O Flexbox oferece várias propriedades para alinhamento e distribuição de itens, como:</p>
+            <ul>
+                <li><code>justify-content</code>: Alinha os itens horizontalmente.</li>
+                <li><code>align-items</code>: Alinha os itens verticalmente.</li>
+                <li><code>align-self</code>: Permite que um item se alinhe individualmente.</li>
+            </ul>
+            <pre><code>
+                .container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            </code></pre>
+
+            <h3>3. Grid Layout</h3>
+            <p>O **Grid Layout** é uma das adições mais poderosas ao CSS para criar layouts bidimensionais (linhas e colunas) e é amplamente utilizado para layouts mais complexos e dinâmicos.</p>
+
+            <h4>O que é o Grid Layout?</h4>
+            <p>O **Grid Layout** permite criar um layout com linhas e colunas, facilitando a organização de elementos de maneira mais controlada. Com o Grid Layout, você pode criar layouts complexos com poucos códigos.</p>
+            <pre><code>
+                .container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            </code></pre>
+            <p>O exemplo acima cria um grid com três colunas, onde cada coluna ocupa uma fração do espaço disponível (1fr).</p>
+
+            <h4>Alinhamento no Grid Layout</h4>
+            <p>O Grid Layout também oferece controle sobre o alinhamento dos itens dentro da grid. As propriedades incluem:</p>
+            <ul>
+                <li><code>justify-items</code>: Alinha os itens horizontalmente dentro de suas células de grid.</li>
+                <li><code>align-items</code>: Alinha os itens verticalmente dentro de suas células de grid.</li>
+                <li><code>grid-gap</code>: Define o espaçamento entre as células da grid.</li>
+            </ul>
+            <pre><code>
+                .container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+            </code></pre>
+
+            <h3>4. Layouts Responsivos</h3>
+            <p>Nos dias de hoje, criar layouts responsivos é essencial para garantir que seu site seja exibido corretamente em todos os dispositivos, desde desktops até smartphones. O CSS oferece ferramentas poderosas para construir designs responsivos.</p>
+
+            <h4>Media Queries</h4>
+            <p>As **media queries** são usadas para aplicar estilos diferentes dependendo das características do dispositivo (como largura da tela, resolução, etc.).</p>
+            <pre><code>
+                @media (max-width: 768px) {
+                    .container {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </code></pre>
+            <p>Este exemplo usa uma media query para ajustar o layout da grid para uma coluna única em dispositivos com largura de tela de até 768px.</p>
+
+            <h3>5. Transições e Animações em Layouts</h3>
+            <p>O CSS também permite adicionar **transições** e **animações** para criar efeitos dinâmicos e melhorar a experiência do usuário.</p>
+
+            <h4>Transições</h4>
+            <p>As transições permitem que as propriedades CSS mudem suavemente quando um evento ocorre, como passar o mouse sobre um botão.</p>
+            <pre><code>
+                .item {
+                    transition: transform 0.3s ease;
+                }
+
+                .item:hover {
+                    transform: scale(1.1);
+                }
+            </code></pre>
+
+            <h4>Animações</h4>
+            <p>As animações no CSS são mais complexas e permitem criar movimentos e mudanças mais elaboradas.</p>
+            <pre><code>
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .item {
+                    animation: fadeIn 2s ease-in-out;
+                }
+            </code></pre>
+
+            <h2>Conclusão</h2>
+            <p>Agora que você tem uma compreensão sólida de como criar **layouts** em CSS usando **Flexbox**, **Grid Layout** e outras técnicas, você pode começar a construir designs modernos e responsivos para suas páginas web.</p>
+            <p>Vamos testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 7</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual propriedade é usada para alinhar itens dentro de um contêiner Flexbox?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">justify-content</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">align-items</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">grid-template-columns</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'd')">float</button>
+
+                <p>2. Qual é a propriedade usada para criar uma grid de layout em CSS?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">display: grid</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">display: flex</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">grid-gap</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'd')">align-items</button>
+
+                <p>3. O que a propriedade <code>grid-template-columns</code> faz?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">Define o número de colunas em uma grid</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">Define o espaçamento entre as células da grid</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">Alinha os itens na horizontal</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'd')">Alinha os itens na vertical</button>
+
+                <p>4. Como você cria uma transição de efeito de transformação em CSS?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">transition: transform 0.3s</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">animation: transform 0.3s</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">display: transition 0.3s</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'd')">transform: ease-in-out</button>
+
+                <p>5. O que é o <code>clearfix</code> usado para?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">Corrigir problemas de layout com float</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">Aplicar margem aos elementos</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Estilizar os itens de uma grid</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'd')">Alinhar os itens na vertical</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo7.js"></script>
+</body>
+</html>
